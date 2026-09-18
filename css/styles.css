@@ -1,0 +1,311 @@
+/* стили канбан доски */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #222;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.hint {
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.board {
+  display: flex;
+  gap: 14px;
+}
+
+.column {
+  width: 25%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.column-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.cnt {
+  background: #eef1f5;
+  border-radius: 10px;
+  padding: 1px 8px;
+  font-size: 12px;
+  color: #555;
+}
+
+.column-cards {
+  min-height: 60px;
+}
+
+.empty {
+  color: #999;
+  text-align: center;
+  padding: 16px 0;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+}
+
+/* карточка */
+
+.card {
+  background: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.card-desc {
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.card-line {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.card-return {
+  font-size: 12px;
+  background: #fff3cd;
+  border: 1px solid #ffe08a;
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin-top: 6px;
+}
+
+.badge {
+  font-size: 11px;
+  white-space: nowrap;
+  padding: 2px 7px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.badge-ok {
+  background: #d9f2d9;
+  color: #227722;
+  border: 1px solid #b6e3b6;
+}
+
+.badge-late {
+  background: #fbdddd;
+  color: #a12626;
+  border: 1px solid #f3bcbc;
+}
+
+.card-btns {
+  margin-top: 8px;
+}
+
+.mini-btn {
+  font-size: 12px;
+  padding: 3px 8px;
+  margin: 2px 4px 2px 0;
+  border: 1px solid #bbb;
+  background: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mini-btn:hover {
+  background: #ddd;
+}
+
+.mini-btn.blue {
+  background: #2196f3;
+  border-color: #1976d2;
+  color: #fff;
+}
+
+.mini-btn.blue:hover {
+  background: #1976d2;
+}
+
+.mini-btn.red {
+  background: #e53935;
+  border-color: #c62828;
+  color: #fff;
+}
+
+.mini-btn.red:hover {
+  background: #c62828;
+}
+
+.mini-btn.orange {
+  background: #ff9800;
+  border-color: #ef6c00;
+  color: #fff;
+}
+
+.mini-btn.orange:hover {
+  background: #ef6c00;
+}
+
+.add-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  font-size: 14px;
+  background: #2196f3;
+  color: #fff;
+  border: 1px solid #1976d2;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #1976d2;
+}
+
+/* модальные окна */
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.window {
+  width: 420px;
+  max-width: 95%;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.window-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.close-x {
+  cursor: pointer;
+  color: #888;
+  font-size: 18px;
+  padding: 0 4px;
+}
+
+.close-x:hover {
+  color: #000;
+}
+
+.window-body {
+  padding: 14px;
+}
+
+.modal-text {
+  margin-top: 0;
+}
+
+/* форма */
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 4px;
+  color: #444;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.form-row textarea {
+  resize: vertical;
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  border: 1px solid #bbb;
+  background: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #ddd;
+}
+
+.btn.blue {
+  background: #2196f3;
+  border-color: #1976d2;
+  color: #fff;
+}
+
+.btn.blue:hover {
+  background: #1976d2;
+}
+
+.btn.red {
+  background: #e53935;
+  border-color: #c62828;
+  color: #fff;
+}
+
+.btn.red:hover {
+  background: #c62828;
+}
+
+.btn.orange {
+  background: #ff9800;
+  border-color: #ef6c00;
+  color: #fff;
+}
+
+.btn.orange:hover {
+  background: #ef6c00;
+}

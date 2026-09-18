@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kanban доска</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="app">
+  <h1>Kanban доска</h1>
+  <p class="hint">Создавать новые задачи можно только в первой колонке. Данные сохраняются в браузере.</p>
+
+  <div class="board">
+    <kanban-column
+      v-for="(t, i) in titles"
+      :key="t"
+      :num="i + 1"
+      :name="t"
+      :list="getCards(i + 1)"
+      @add="openAdd"
+      @edit="openEdit"
+      @del="openDelete"
+      @right="moveRight"
+      @back="openReturn">
+    </kanban-column>
+  </div>
+
+  <card-editor v-if="showAddForm" mode="add" @save="addCard" @cancel="cancelAdd"></card-editor>
+
+  <card-editor v-if="editCardId != null" mode="edit" :card="editCopy" @save="saveEdit" @cancel="cancelEdit"></card-editor>
+
+  <return-dialog v-if="returnCardId != null" @save="doReturn" @cancel="cancelReturn"></return-dialog>
+
+  <confirm-dialog v-if="deleteCardId != null" :question="deleteQuestion()" @yes="delCard" @no="cancelDelete"></confirm-dialog>
+</div>
+
+<script src="js/vue.min.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/components/base-modal.js"></script>
+<script src="js/components/card-editor.js"></script>
+<script src="js/components/return-dialog.js"></script>
+<script src="js/components/confirm-dialog.js"></script>
+<script src="js/components/task-card.js"></script>
+<script src="js/components/kanban-column.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
